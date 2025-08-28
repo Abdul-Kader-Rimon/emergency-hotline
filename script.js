@@ -25,14 +25,14 @@ function callButton(buttonId, serviceNameId, serviceNumberId , coinAmountId) {
 
     call.addEventListener("click", function () {
         if (coins < 20) {
-            alert("tumar jotesto coin nai")
+            alert("You don't have enough coins! You need at least 20 coins to make a call.")
             return;
         }
         coins -= 20;
         const serviceName = document.getElementById(serviceNameId).innerText
         const serviceNumber = document.getElementById(serviceNumberId).innerText
 
-        alert(`calling ${serviceName} at ${serviceNumber} coins left : ${coins}`)
+        alert(` calling ${serviceName}  ${serviceNumber} `)
 
         const coin = document.getElementById(coinAmountId)
         coin.innerText = coins
@@ -70,4 +70,31 @@ callButton("call-btn-8", "service-name-8", "service-number-8", "coin-amount")
 document.getElementById("clear-history-btn").addEventListener("click", function (){
     const history = document.getElementById("call-history")
     history.innerHTML = ""
-} )
+})
+
+
+// copy functionality
+
+function copyButton(copyBtnClass, copyNumberClass, copyCountId) {
+    const counter = document.getElementById(copyCountId)
+    let count = Number(counter.innerText)
+    
+    const copyButton = document.getElementsByClassName(copyBtnClass)
+    const copyNumber = document.getElementsByClassName(copyNumberClass)
+     
+    let index = 0
+
+    for (const copyBtn of copyButton) {
+        const value = copyNumber[index].innerText
+        copyBtn.addEventListener("click", function () {
+            navigator.clipboard.writeText(value)
+
+            alert("Copied : " + value)
+            counter.innerText = ++count
+        })
+        index++
+    }
+    
+}
+
+copyButton("copy-btn", "copy-number", "copy-count")
