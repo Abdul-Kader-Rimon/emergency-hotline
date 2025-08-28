@@ -34,7 +34,7 @@
                     <img class="w-[30px] h-[30px]" src="./assets/heart.png" alt="">
                 </div>
                 <div class="bg-[#ecfff0] hover:bg-[#afffbf] font-bold rounded-full px-2  w-[100px] h-[40px] flex items-center mx-2 transition delay-150 duration-300">
-                    <p class="mx-2">100</p>
+                    <p id="coin-amount" class="mx-2">100</p>
                     <img  class="w-[30px] h-[30px]" src="./assets/coin.png" alt="">
                 </div>
                 <div class="text-white font-bold rounded-full px-2 bg-[#00a63e] w-[100px] h-[40px] flex items-center mx-2 hover:text-[#00a63e] hover:bg-[#ecfff0] transition delay-150 duration-300">
@@ -75,16 +75,16 @@
                                 </div>
                             </div>
                             <div class="my-4">
-                                <h2 class="font-bold text-xl">National Emergency Number</h2>
+                                <h2 id="service-name" class="font-bold text-xl">National Emergency Number</h2>
                                 <p>National Emergency</p>
                             </div>
                             <div class="my-4">
-                                <h2 class="font-bold text-xl mb-1">999</h2>
+                                <h2 id="service-number" class="font-bold text-xl mb-1">999</h2>
                                 <span class="text-gray-500 bg-gray-50 rounded-full px-4 py-1 ">All</span>
                             </div>
                             <div class="flex flex-col lg:flex-row gap-2  font-semibold">
                                 <button class="transition delay-150 duration-300 w-full h-[40px] border-2 border-gray-300 hover:bg-gray-300 rounded-lg"><span><i class="fa-regular fa-copy"></i></span> Copy</button>
-                                <button class="transition delay-150 duration-300 w-full h-[40px] bg-[#00a63e] text-white hover:bg-[#afffbf] hover:text-[#00a63e] rounded-lg"><span ><i class="fa-solid fa-phone"></i> </span>Call</button>
+                                <button id="call-btn" class="transition delay-150 duration-300 w-full h-[40px] bg-[#00a63e] text-white hover:bg-[#afffbf] hover:text-[#00a63e] rounded-lg"><span ><i class="fa-solid fa-phone"></i> </span>Call</button>
                             </div>
                         </div>
 
@@ -299,7 +299,9 @@
                         <h2 class="font-bold"><span> <i class="fa-solid fa-clock-rotate-left"></i> </span>Call History</h2>
                         <button class="btn btn-lg transition delay-150 duration-300 text-white bg-[#00a63e] hover:bg-[#ecfff0]  hover:text-[#00a63e] rounded-full">Clear</button>
                     </div>
-                    <div class="mt-3 space-y-2"></div>
+                    <div id="call-history"  >
+
+                    </div>
                 </div>
               </div>
 
@@ -312,3 +314,5 @@
 </body>
 
 </html>
+
+ 
