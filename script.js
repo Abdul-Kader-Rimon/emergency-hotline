@@ -29,7 +29,7 @@ function callButton(buttonId, serviceNameId, serviceNumberId , coinAmountId) {
             return;
         }
         coins -= 20;
-        const serviceName = document.getElementById(buttonId).innerText
+        const serviceName = document.getElementById(serviceNameId).innerText
         const serviceNumber = document.getElementById(serviceNumberId).innerText
 
         alert(`calling ${serviceName} at ${serviceNumber} coins left : ${coins}`)
@@ -39,14 +39,11 @@ function callButton(buttonId, serviceNameId, serviceNumberId , coinAmountId) {
 
         const history = document.getElementById("call-history")
         const div = document.createElement("div")
-
-        // div.innerText = `${serviceName}  ${serviceNumber}`
-        // history.appendChild(div)
         div.innerHTML = `
         <div >
-            <div class="flex items-center justify-between bg-gray-200 p-2 rounded-lg gap-3 my-3">
+            <div class="flex items-center justify-between bg-gray-100 p-2 rounded-lg gap-3 my-3">
                 <div class="ml-3">
-                    <h1>${serviceName}</h1>
+                    <h1 class="font-bold">${serviceName}</h1>
                     <p>${serviceNumber}</p>
                 </div>
                 <div>
@@ -59,3 +56,18 @@ function callButton(buttonId, serviceNameId, serviceNumberId , coinAmountId) {
 }
 
 callButton("call-btn", "service-name", "service-number", "coin-amount")
+callButton("call-btn-1", "service-name-1", "service-number-1", "coin-amount")
+callButton("call-btn-2", "service-name-2", "service-number-2", "coin-amount")
+callButton("call-btn-3", "service-name-3", "service-number-3", "coin-amount")
+callButton("call-btn-4", "service-name-4", "service-number-4", "coin-amount")
+callButton("call-btn-5", "service-name-5", "service-number-5", "coin-amount")
+callButton("call-btn-6", "service-name-6", "service-number-6", "coin-amount")
+callButton("call-btn-7", "service-name-7", "service-number-7", "coin-amount")
+callButton("call-btn-8", "service-name-8", "service-number-8", "coin-amount")
+
+// clear history
+
+document.getElementById("clear-history-btn").addEventListener("click", function (){
+    const history = document.getElementById("call-history")
+    history.innerHTML = ""
+} )
